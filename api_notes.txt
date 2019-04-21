@@ -1,0 +1,27 @@
+general api is https://one-bite-api.barstoolsports.com with quite literally 0 authentication
+
+no matter what the user id field is, you can access everything from the api on the venue side
+
+venue endpoint:
+	there is a database that barstool has on the pizza places, attached to the tag /venue
+	note: this tag can only return 50 (maybe 100?) items at a time (which is smart, you tend to not want your api to just return everything)
+	there is a dave parameter, which if 1 will only return spots that Dave has been to and if 0 will return spots that customers have been to but he has not
+	you can specify zipcode in the application but that is turned into longitude and latitude and then searched for proximity on the server side. It doesn't appear to do anything when specifying the parameter on the api side
+	there is also a radius key
+
+user endpoint:
+	thankfully, the user endpoint is closed and even if you put in your user string, you can't get anywhere interesting
+
+https://one-bite-api.barstoolsports.com/venue?dave=1&state=NY&radius=10000000&lon=-73.92278881&lat=40.65583081&radius=10000000
+
+https://one-bite-api.barstoolsports.com/venue?dave=0&lat=40.73&lon=-73.98&state=NY&zip=11216
+
+Latitude: 40°39′21″N   40.65583081
+Longitude: 73°55′22″W   -73.92278881
+Distance: 5.8757 mi  Bearing: 132.05°
+
+https://one-bite-api.barstoolsports.com/venue?lat=37.13&lon=-95.79&radius=8151500
+https://one-bite-api.barstoolsports.com/venue?lat=28.48&lon=-81.37&radius=28000&state=FL
+
+
+so now 
